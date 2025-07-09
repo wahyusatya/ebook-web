@@ -58,7 +58,7 @@ const Home = () => {
   );
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-900">
+    <div className="min-h-screen flex flex-col bg-gray-900 rounded-xl">
       <Header />
       <main className="flex-grow container mx-auto p-4 sm:p-6">
 

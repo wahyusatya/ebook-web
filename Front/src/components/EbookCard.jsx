@@ -29,7 +29,7 @@ const EbookCard = ({ ebook, onEdit, onDelete, isAdminView }) => {
 
     } catch (error) {
       console.error('Download failed:', error);
-      alert('Gagal mengunduh file. Pastikan Anda sudah login.');
+      alert('Gagal mengunduh file. File tidak tersedia atau terjadi kesalahan.');
     } finally {
       setIsDownloading(false);
     }
@@ -104,7 +104,7 @@ const EbookCard = ({ ebook, onEdit, onDelete, isAdminView }) => {
       </div>
 
       <div className="p-4">
-        <h3 className="font-semibold text-lg text-green-light line-clamp-2 mb-1">
+        <h3 className="font-semibold text-lg text-white line-clamp-2 mb-1">
           {title}
         </h3>
         <p className="text-sm text-gray-400 line-clamp-1">

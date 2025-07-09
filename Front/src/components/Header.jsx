@@ -31,7 +31,7 @@ const Header = () => {
       : "text-gray-300 hover:text-green-light transition-colors";
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-black/80 backdrop-blur-md border-b border-green-dark/50">
+    <header className="sticky top-0 z-50 w-full bg-black/80 backdrop-blur-md border border-green-dark/50 rounded-xl">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo and App Name */}
