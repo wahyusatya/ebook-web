@@ -55,8 +55,8 @@ const AdminDashboard = () => {
       <main className="flex-grow container mx-auto p-4 sm:p-6">
         <div className="flex justify-between items-center mb-6">
           <div>
-            <h1 className="text-3xl font-bold text-green-light">Admin Dashboard</h1>
-            <p className="text-gray-300 mt-1">Kelola daftar E-book di sini.</p>
+            <h1 className="text-3xl font-bold text-gradient-green-black">Admin Dashboard</h1>
+            
           </div>
           <button
             onClick={() => setShowAddModal(true)}

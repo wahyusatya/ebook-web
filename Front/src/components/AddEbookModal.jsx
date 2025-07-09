@@ -75,7 +75,7 @@ const AddEbookModal = ({ showModal, setShowModal, onEbookAdded }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
       <div className={`w-full max-w-md bg-gray-900/90 backdrop-blur-md rounded-xl border border-green-dark/50 p-6`}>
-        <h2 className={`text-2xl font-bold text-green-light mb-6`}>
+        <h2 className={`text-2xl font-bold text-green-500 mb-6`}>
           Add New Ebook
         </h2>
 

@@ -6,6 +6,8 @@
   --color-green-dark: #1a4d33;
   --color-green-medium: #2d7a4f;
   --color-green-light: #38a169;
+  --color-gray-light: #f7fafc;
+  --color-gray-dark: #2d3748;
   --color-text-light: rgba(255, 255, 255, 0.87);
   --color-text-dark: #1a202c;
 
@@ -127,3 +129,10 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+.text-gradient-green-black {
+  background: linear-gradient(to right, var(--color-green-light), var(--color-gray-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback for browsers that don't support background-clip: text */
+}
