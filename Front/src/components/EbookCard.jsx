@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { MoreVertical, Edit, Trash2, DownloadCloud, Loader } from 'lucide-react';
+import { MoreVertical, Edit, Trash2, DownloadCloud, Loader, Book } from 'lucide-react';
 import { downloadEbookFile } from '../services/ebookService';
 
 const EbookCard = ({ ebook, onEdit, onDelete, isAdminView }) => {
   const { id, title, author, cover_image, genre } = ebook;
   const [showMenu, setShowMenu] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const handleDownload = async (e) => {
     e.stopPropagation(); // Prevent other click events
@@ -37,12 +38,18 @@ const EbookCard = ({ ebook, onEdit, onDelete, isAdminView }) => {
   return (
     <div className="relative group w-full bg-gray-800 rounded-xl border border-green-dark overflow-hidden hover:shadow-lg hover:shadow-green-medium/30 transition-all duration-300">
       <div className="relative">
-        <img
-          src={cover_image} // This will be null, so the onError will trigger
-          alt={`Cover for ${title}`}
-          className="w-full h-64 object-cover"
-          onError={(e) => { e.target.src = 'https://via.placeholder.com/300x400.png?text=No+Image'; }}
-        />
+        {imageError || !cover_image ? (
+          <div className="w-full h-64 flex items-center justify-center bg-gray-700">
+            <Book className="w-24 h-24 text-green-light" />
+          </div>
+        ) : (
+          <img
+            src={cover_image}
+            alt={`Cover for ${title}`}
+            className="w-full h-64 object-cover"
+            onError={() => setImageError(true)}
+          />
+        )}
 
         {/* Download overlay for all logged-in users */}
         <div 
