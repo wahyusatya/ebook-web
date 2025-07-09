@@ -97,7 +97,7 @@ def login():
     conn.close()
 
     if not user or not check_password_hash(user['password'], data['password']):
-        return jsonify({'message': 'Invalid credentials!'}), 401
+        return jsonify({'message': 'Email or password is invalid'}), 401
 
     token = jwt.encode({
         'email': user['email'],

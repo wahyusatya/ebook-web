@@ -21,7 +21,7 @@ export const authService = {
         }
       }
       if (response.isExpiredJWT) { // This will be set by api.jsx for 401s
-        throw new Error("Your session has expired. Please log in again.");
+        throw new Error("Email or Password is Invalid!");
       }
 
       // Assuming response contains { token: "...", user: { id, username, email, role } }
